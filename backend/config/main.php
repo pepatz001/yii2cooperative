@@ -12,31 +12,33 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [],
-    'homeUrl' => '/office',
+    //'homeUrl' => '/office',
     'modules' => [
         'admin' => [
             'class' => 'mdm\admin\Module',
             'layout' => 'left-menu',
         ],
-        'user' => [
-           'class' => 'dektrium\user\Module',
-            'enableUnconfirmedLogin' => true,
-            'confirmWithin' => 21600,
-            'cost' => 12,
-            'admins' => ['admin']
-        ],
+//        'user' => [
+//           'class' => 'dektrium\user\Module',
+//            'enableUnconfirmedLogin' => true,
+//            'confirmWithin' => 21600,
+//            'cost' => 12,
+//            'admins' => ['admin']
+//        ],
     ],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',
-            'baseUrl' => '/office',
+            //'baseUrl' => '/backend',
         ],
-        
         'user' => [
-            'identityClass' => 'dektrium\user\models\User',
-            'enableAutoLogin' => true,
-            'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
+            'identityClass' => 'common\models\User',           
         ],
+//        'user' => [
+//            'identityClass' => 'dektrium\user\models\User',
+//            'enableAutoLogin' => true,
+//            'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
+//        ],
         'session' => [
             // this is the name of the session cookie used for login on the backend
             'name' => 'advanced-backend',
@@ -54,12 +56,12 @@ return [
             'errorAction' => 'site/error',
         ],
         
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
-            ],
-        ],
+//        'urlManager' => [
+//            'enablePrettyUrl' => true,
+//            'showScriptName' => false,
+//            'rules' => [
+//            ],
+//        ],
         
 //       'view' => [
 // 			'theme' => [
