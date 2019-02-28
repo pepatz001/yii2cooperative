@@ -8,12 +8,20 @@ $params = array_merge(
 
 return [
     'id' => 'app-backend',
+    'name'=> "Co-Op",
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
+    'language'=>'TH-th',
     'modules' => [],
     //'homeUrl' => '/office',
     'modules' => [
+        'member' => [
+             'class' => 'backend\modules\member\Module',
+        ],
+         'config' => [
+            'class' => 'backend\modules\config\Module',
+        ],
         'admin' => [
             'class' => 'mdm\admin\Module',
             'layout' => 'left-menu',
@@ -73,7 +81,7 @@ return [
     'assetManager' => [
         'bundles' => [
             'dmstr\web\AdminLteAsset' => [
-                'skin' => 'skin-black-light',
+                'skin' => 'skin-blue',
             ],
         ],
     ],

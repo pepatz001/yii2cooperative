@@ -8,7 +8,7 @@
                 <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
             </div>
             <div class="pull-left info">
-                <p>Alexander Pierce</p>
+                <p><?=Yii::$app->user->identity->username?></p>
 
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -67,18 +67,25 @@
              
                     ['label' => 'ธุระกรรมการเงิน', 'options' => ['class' => 'header']],
                     [
-                                'label' => 'หุ้น',
-                                'icon' => 'circle-o',
-                                'url' => '#',
-                                'items' => [
-                                    ['label' => 'จัดการบัญชี', 'icon' => 'circle-o', 'url' => '#',],
-                                    ['label' => 'จัดการบัญชี', 'icon' => 'circle-o', 'url' => '#',],
-                                    
-                                ],
-                            ],
-             
-                    ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
-                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],                    
+                        'label' => 'หุ้น',
+                        'icon' => 'circle-o',
+                        'url' => '#',
+                        'items' => [
+                            ['label' => 'จัดการบัญชี', 'icon' => 'circle-o', 'url' => '#',],
+                            ['label' => 'ชำระค่าหุ้น', 'icon' => 'circle-o', 'url' => '#',],
+                            ['label' => 'จัดการหุ้น', 'icon' => 'circle-o', 'url' => '#',],                                    
+                        ],
+                    ],    
+                    ['label' => 'สำหรับผู้ดูแลระบบ', 'options' => ['class' => 'header']],
+                    [
+                        'label' => 'ตั้งค่าต่างๆ',
+                        'icon' => 'circle-o',
+                        'url' => '#',
+                        'items' => [
+                            ['label' => 'คำนำหน้า', 'icon' => 'circle-o', 'url' => ['/config/prefix'],],
+                                                             
+                        ],
+                    ],
                 ];
         
         
